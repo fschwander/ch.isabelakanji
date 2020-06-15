@@ -3,6 +3,7 @@ import './App.scss';
 import {DrawerNavContainer} from "./container/DrawerNavContainer";
 import {Helmet} from "react-helmet";
 import ogImage from "./res/imgs/ogImage.jpg";
+import {RoundCursor} from './widgets/RoundCursor';
 
 function App() {
   const url = 'http://www.isabelakanji.ch';
@@ -22,6 +23,8 @@ function App() {
       </Helmet>
 
       <DrawerNavContainer/>
+      <RoundCursor/>
+
     </div>
   );
 }
