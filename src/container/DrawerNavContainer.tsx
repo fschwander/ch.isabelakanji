@@ -2,6 +2,7 @@ import React, {ReactElement, useEffect, useState} from "react";
 import './DrawerNavContainer.scss';
 import {YogaPage} from "../pages/yoga/YogaPage";
 import {SchnapsPage} from "../pages/schnaps/SchnapsPage";
+import {AboutPage} from '../pages/about/AboutPage';
 
 interface NavItem {
   text: string,
@@ -30,7 +31,13 @@ export const DrawerNavContainer: React.FC = () => {
       text: 'Produkte',
       color: '#DDE2B5',
       component: <SchnapsPage windowHeight={getWindowHeight()}/>
+    },
+    {
+      text: 'Über mich',
+      color: '#E5B8B8',
+      component: <AboutPage windowHeight={getWindowHeight()}/>
     }
+
   ];
 
   useEffect(() => {
