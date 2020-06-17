@@ -70,20 +70,6 @@ html {
       justify-content: center;
       flex-direction: column;
     }
-
-    .Content {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-
-      .padding-top {
-        padding-top: 1.5em;
-      }
-
-      & > * {
-        padding-bottom: 20vh;
-      }
-    }
   }
 }
 
