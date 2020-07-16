@@ -35,7 +35,7 @@ export const DrawerNavContainer: React.FC = () => {
     {
       text: 'Über mich',
       color: '#E5B8B8',
-      component: <AboutPage windowHeight={getWindowHeight()}/>
+      component: <AboutPage/>
     }
 
   ];
