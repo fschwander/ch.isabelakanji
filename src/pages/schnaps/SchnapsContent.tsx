@@ -1,10 +1,10 @@
-import './SchnapsContent.scss'
+import './SchnapsContent.scss';
 import React, {createRef, RefObject} from "react";
 import mountainImg from '../../res/imgs/mountains.svg';
 import bottleIva from '../../res/imgs/bottle_iva.jpg';
 import bottleArven from '../../res/imgs/bottle_arven.jpg';
 import {Col, Container, Row} from "reactstrap";
-import headerImgFront from '../../res/imgs/bottles_front.png'
+import headerImgFront from '../../res/imgs/bottles_front.png';
 import headerImgBack from '../../res/imgs/bottles_back.png';
 
 interface SchnapsContentProps {
@@ -26,8 +26,8 @@ export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
         img: bottleIva,
         header: 'Iva',
         text: [
-          'Hergestellt aus selbstgepflückter Schafgarbe',
-          '21%, 3.75dl',
+          'Am Besten gekühlt, als Aperitif oder Digestif, z.B. nach schwerem Essen wie Käsefondue oder Raclette, oder auch als Longdrink mit Gin und Tonic zu geniessen, Viva!',
+          '33%, 3.5 dl',
           '39.–'
         ]
       },
@@ -35,8 +35,8 @@ export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
         img: bottleArven,
         header: 'Arvenschnaps',
         text: [
-          'Hergestellt aus selbstgepflückter Schafgarbe',
-          '21%, 3.75dl',
+          'Ob als Gipfelschnaps, in der Berghütte oder im gemütlichen Zuhause... der einzigartige Geschmack der Arve ist Genuss pur!',
+          '37.5%, 3.5 dl',
           '39.–'
         ]
       }
@@ -58,15 +58,6 @@ export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
         </div>
 
         <Container className={'body'}>
-          <Row>
-            <Col>
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-                et
-                dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                Stet
-                clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
-            </Col>
-          </Row>
 
           {productItems.map((item: ProductItemInterface, i: number) => {
             return (
@@ -83,7 +74,7 @@ export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
                 </Col>
                 <Col sm={0} md={1}/>
               </Row>
-            )
+            );
           })}
         </Container>
 
@@ -95,6 +86,6 @@ export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
           <img src={mountainImg} alt={'Hintergrundbild'} style={{maxHeight: `calc(${props.windowHeight} * 0.6)`}}/>
         </div>
       </div>
-    )
+    );
   }
 ;
