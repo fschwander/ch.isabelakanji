@@ -15,9 +15,11 @@ export const AboutPage: React.FC = () => {
 
       <h1>Isabel Akanji</h1>
 
-      <p>Diplomierte Yogalehrerin</p>
-      <p>Diplomierte Heilkräuterfrau</p>
-      <p>Kinderskilehrerin</p>
+      <div className={'list-container'}>
+        <p>Diplomierte Yogalehrerin</p>
+        <p>Diplomierte Heilkräuterfrau</p>
+        <p>Kinderskilehrerin</p>
+      </div>
 
       <p>Wohnhaft in Savognin und am Zürichsee</p>
     </div>
