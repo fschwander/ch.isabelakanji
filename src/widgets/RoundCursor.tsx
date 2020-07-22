@@ -15,11 +15,14 @@ export const RoundCursor: React.FC = () => {
     return () => window.removeEventListener('mousemove', updateMousePosition);
   });
 
-
-  return (
-    <div className={`RoundCursor`}>
+  if(window.innerWidth < 600) {
+    return null
+  } else {
+    return (
+      <div className={`RoundCursor`}>
       <span className={`cursor ${mouseX === 0 || mouseY === 0 ? 'hide' : ''}`}
             style={{left: mouseX, top: mouseY}}/>
-    </div>
-  );
+      </div>
+    );
+  }
 };

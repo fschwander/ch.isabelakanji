@@ -1,7 +1,9 @@
 @import "src/variables";
 
-*, *:hover {
-  cursor: none !important;
+@media screen and (min-width: 799px){
+  *, *:hover {
+    cursor: none !important;
+  }
 }
 
 .RoundCursor {
