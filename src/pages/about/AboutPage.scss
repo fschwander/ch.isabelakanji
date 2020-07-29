@@ -28,6 +28,13 @@
       margin: auto;
       border-radius: 50%;
       object-fit: cover;
+
+      @media screen and (max-width: 400px) {
+        max-width: 90vw;
+        max-height: 90vw;
+        min-width: 90vw;
+        min-height: 90vw;
+      }
     }
 
     .contact-button {
