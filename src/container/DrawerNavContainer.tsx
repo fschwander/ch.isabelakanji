@@ -1,6 +1,5 @@
 import React, {ReactElement, useEffect, useState} from "react";
 import './DrawerNavContainer.scss';
-import {YogaPage} from "../pages/yoga/YogaPage";
 import {SchnapsPage} from "../pages/schnaps/SchnapsPage";
 import {AboutPage} from '../pages/about/AboutPage';
 
@@ -22,11 +21,11 @@ export const DrawerNavContainer: React.FC = () => {
   }
 
   const navItems: Array<NavItem> = [
-    {
-      text: 'Yoga',
-      color: '#93BED5',
-      component: <YogaPage windowHeight={getWindowHeight()}/>
-    },
+    // {
+    //   text: 'Yoga',
+    //   color: '#93BED5',
+    //   component: <YogaPage windowHeight={getWindowHeight()}/>
+    // },
     {
       text: 'Produkte',
       color: '#DDE2B5',

@@ -36,7 +36,7 @@ export const SchnapsContent: React.FC<SchnapsContentProps> = (props) => {
         header: 'Arvenschnaps',
         text: [
           'Ob als Gipfelschnaps, in der Berghütte oder im gemütlichen Zuhause... der einzigartige Geschmack der Arve ist Genuss pur!',
-          '37.5%, 3.5 dl',
+          '32%, 3.5 dl',
           '39.–'
         ]
       }
