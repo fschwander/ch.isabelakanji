@@ -14,6 +14,7 @@ export const DrawerNavContainer: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(-1);
   const [isSmallScreen, setIsSmallScreen] = useState(() => window.innerWidth < breakPoint);
   const [registerWidth, setRegisterWidth] = useState(0);
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
   const registerHeight = 50;
 
   const getWindowHeight = () => {
@@ -92,6 +93,15 @@ export const DrawerNavContainer: React.FC = () => {
       return `${registerHeight}px`;
     }
   };
+
+  const handleResize = () => {
+    setWindowHeight(window.innerHeight);
+  }
+
+  useEffect(() => {
+    document.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  })
 
   return (
     <div className={`DrawerNavContainer`} style={{height: `${window.innerHeight}px`}}>
