@@ -14,18 +14,18 @@ export const DrawerNavContainer: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(-1);
   const [isSmallScreen, setIsSmallScreen] = useState(() => window.innerWidth < breakPoint);
   const [registerWidth, setRegisterWidth] = useState(0);
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+  const [innerHeight, setInnerHeight] = useState(window.innerHeight);
   const registerHeight = 50;
 
   const getWindowHeight = () => {
-    return (isSmallScreen ? window.innerHeight - (2 * registerHeight) : window.innerHeight) + 'px';
+    return (isSmallScreen ? innerHeight - (2 * registerHeight) : innerHeight) + 'px';
   }
 
   const navItems: Array<NavItem> = [
     // {
     //   text: 'Yoga',
     //   color: '#93BED5',
-    //   component: <YogaPage windowHeight={getWindowHeight()}/>
+    //   component: <YogaPage window.innerHeight={getwindow.innerHeight()}/>
     // },
     {
       text: 'Produkte',
@@ -39,15 +39,6 @@ export const DrawerNavContainer: React.FC = () => {
     }
 
   ];
-
-  useEffect(() => {
-    const updateSize = () => {
-      setRegisterWidth(window.innerWidth * 0.04 < 30 ? 30 : window.innerWidth * 0.04);
-      setIsSmallScreen(window.innerWidth <= breakPoint);
-    };
-    window.addEventListener('resize', () => updateSize());
-    updateSize()
-  });
 
   const setActiveDrawer = (i: number) => {
     const newIndex = i === activeIndex ? -1 : i;
@@ -66,11 +57,11 @@ export const DrawerNavContainer: React.FC = () => {
 
   const calcVerticalSpace = (i: number): string => {
     if (!isSmallScreen) {
-      return `${window.innerHeight}px`;
+      return `${innerHeight}px`;
     } else if (activeIndex === -1) {
-      return `${window.innerHeight / navItems.length}px`;
+      return `${innerHeight / navItems.length}px`;
     } else {
-      return i === activeIndex ? `calc(${window.innerHeight - (navItems.length - 1) * registerHeight}px)` : `${registerHeight}px`
+      return i === activeIndex ? `calc(${innerHeight - (navItems.length - 1) * registerHeight}px)` : `${registerHeight}px`
     }
   };
 
@@ -86,25 +77,27 @@ export const DrawerNavContainer: React.FC = () => {
 
   const calcDrawerLabelHeight = (): string => {
     if (!isSmallScreen) {
-      return `${window.innerHeight}px`;
+      return `${innerHeight}px`;
     } else if (activeIndex === -1) {
-      return `${window.innerHeight / navItems.length}px`;
+      return `${innerHeight / navItems.length}px`;
     } else {
       return `${registerHeight}px`;
     }
   };
 
   const handleResize = () => {
-    setWindowHeight(window.innerHeight);
-  }
+    setRegisterWidth(window.innerWidth * 0.04 < 30 ? 30 : window.innerWidth * 0.04);
+    setIsSmallScreen(window.innerWidth <= breakPoint);
+    setInnerHeight(window.innerHeight);
+  };
 
   useEffect(() => {
-    document.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  })
+  });
 
   return (
-    <div className={`DrawerNavContainer`} style={{height: `${window.innerHeight}px`}}>
+    <div className={`DrawerNavContainer`} style={{height: `${innerHeight}px`}}>
       {navItems.map((item, i) => {
           return (
             <div className={`drawer-item horizontal-container ${i === activeIndex ? 'active' : 'not-active'}`}
