@@ -92,9 +92,11 @@ export const DrawerNavContainer: React.FC = () => {
   };
 
   useEffect(() => {
+    handleResize();
+
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  });
+  }, []);
 
   return (
     <div className={`DrawerNavContainer`} style={{height: `${innerHeight}px`}}>
