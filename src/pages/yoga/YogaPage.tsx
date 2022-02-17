@@ -34,7 +34,7 @@ export const YogaPage: React.FC<YogaPageProps> = props => {
 
     let topColor = (value: number) => value <= maxY ? topColorScale(value) : topColorScale(maxY);
     let bottomColor = (value: number) => value <= maxY ? bottomColorScale(value) : bottomColorScale(maxY);
-
+    // @ts-ignore
     setBackgroundGradient(`linear-gradient(to bottom, ${topColor(scrollTop)} 10%, ${bottomColor(scrollTop / 4)} 90%)`)
   }
 

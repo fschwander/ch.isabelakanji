@@ -31,6 +31,7 @@ export const Header: React.FC<HeaderInterface> = props => {
       // @ts-ignore
       const topColorScale = d3.scaleLinear().domain([0, maxY]).range([darkGreen, darkBlue]);
       const logo: HTMLObjectElement = rootElement.current.getElementsByClassName("logo-svg")[0] as HTMLObjectElement;
+      // @ts-ignore
       logo.style.borderColor = topColorScale(scrollTop);
     }
   }
