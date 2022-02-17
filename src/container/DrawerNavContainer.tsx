@@ -18,7 +18,9 @@ export const DrawerNavContainer: React.FC = () => {
   const registerHeight = 50;
 
   const getWindowHeight = () => {
-    return (isSmallScreen ? innerHeight - (2 * registerHeight) : innerHeight) + 'px';
+    const height = (isSmallScreen ? innerHeight - (2 * registerHeight) : innerHeight)
+    const maxHeight = height > 800 ? 800 : height;
+    return maxHeight + 'px';
   }
 
   const navItems: Array<NavItem> = [
